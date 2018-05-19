@@ -11,16 +11,16 @@ public class LongestWordInSentence {
 		logger.info("Longest word in the string={} and its size={}", largestString, largestString.length());
 	}
 
-	public static String findLargestWord(String userInput) {
+	public static String findLargestWord(String inputSentence) {
 
-		if (userInput.isEmpty()) {
+		if (inputSentence.isEmpty()) {
 			return "";
 		}
 
-		String[] wordsInSentence = userInput.split("\\W+");
+		String[] wordsInSentence = inputSentence.split("\\W+");
 
 		if (wordsInSentence.length == 1) {
-			return userInput;
+			return inputSentence;
 		}
 
 		int longestWordLength = 0;
