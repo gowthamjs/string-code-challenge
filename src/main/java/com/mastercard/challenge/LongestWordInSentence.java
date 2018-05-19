@@ -1,5 +1,10 @@
 package com.mastercard.challenge;
 
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.LinkedList;
+import java.util.List;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -7,30 +12,52 @@ public class LongestWordInSentence {
 	private static final Logger logger = LogManager.getLogger(LongestWordInSentence.class);
 
 	public static void main(String[] args) {
-		String largestString = findLargestWord("This is the longest word");
-		logger.info("Longest word in the string={} and its size={}", largestString, largestString.length());
+		List<String> largestStringList = findLargestWord("This is great");
+		System.out.println(largestStringList);
+
+		logger.info("Number of longest words in the input sentence is={} and the word(s) are {}",
+				largestStringList.size(), largestStringList);
 	}
 
-	public static String findLargestWord(String inputSentence) {
-
+	public static List<String> findLargestWord(String inputSentence) {
+		List<String> wordsList = new LinkedList<>();
+		List<String> longestWordsList = new LinkedList<>();
 		if (inputSentence.isEmpty()) {
-			return "";
+			return Collections.emptyList();
 		}
 
-		String[] wordsInSentence = inputSentence.split("\\W+");
-
-		if (wordsInSentence.length == 1) {
-			return inputSentence;
+		for (String word : inputSentence.split("\\W+")) {
+			wordsList.add(word);
 		}
 
-		int longestWordLength = 0;
-		String longestWord = "";
-		for (int i = 0; i < wordsInSentence.length; i++) {
-			if (wordsInSentence[i].length() > longestWordLength) {
-				longestWordLength = wordsInSentence[i].length();
-				longestWord = wordsInSentence[i];
+		if (wordsList.size() == 1) {
+			return wordsList;
+		}
+
+		Collections.sort(wordsList, new Comparator<String>() {
+
+			@Override
+			public int compare(String wordOne, String wordTwo) {
+				int wordOneLength = wordOne.length();
+				int wordTwoLength = wordTwo.length();
+				if (wordOneLength > wordTwoLength) {
+					return 1;
+				} else if (wordTwoLength > wordOneLength) {
+					return -1;
+				} else
+					return 0;
+			}
+		});
+
+		for (int i = wordsList.size() - 1; i >= 0; i--) {
+			if (wordsList.get(i).length() != wordsList.get(i - 1).length()) {
+				longestWordsList.add(wordsList.get(i));
+				break;
+			} else if (wordsList.get(i).length() == wordsList.get(i - 1).length()) {
+				longestWordsList.add(wordsList.get(i));
 			}
 		}
-		return longestWord;
+
+		return longestWordsList;
 	}
 }
