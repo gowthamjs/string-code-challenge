@@ -1,5 +1,6 @@
 package com.mastercard.challenge;
 
+import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
 import java.util.Arrays;
@@ -17,8 +18,14 @@ public class LongestWordInSentenceTest {
 	public void shouldReturnLongestWordInSentence(String inputSentence, List<String> expectedLongestWords) {
 		List<String> actualLongestWords = new LinkedList<>();
 		actualLongestWords = LongestWordInSentence.findLargestWord(inputSentence);
+		assertEquals(expectedLongestWords.size(), actualLongestWords.size(),
+				"Number of actual longest words is not equal to the number of expected longest words");
 		assertTrue(expectedLongestWords.containsAll(actualLongestWords),
 				"Actual longest words are different than expected longest words");
+		if (expectedLongestWords.size() > 1) {
+			assertEquals(expectedLongestWords.get(0).length(), actualLongestWords.get(0).length(),
+					"Length of the actual longest word is not equal to the length of expected longest word");
+		}
 	}
 
 	@DataProvider(name = "inputSentenceAndLongestWords")
