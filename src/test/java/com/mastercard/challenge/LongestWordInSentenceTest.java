@@ -13,15 +13,15 @@ public class LongestWordInSentenceTest {
 
 	static LongestWordInSentence longestWordInSentence = new LongestWordInSentence();
 
-	@Test(dataProvider = "inputSentence")
-	public void shouldReturnLongestWordInSentence(String inputSentence, List<String> expectedLargestWords) {
-		List<String> actualLargestWords = new LinkedList<>();
-		actualLargestWords = LongestWordInSentence.findLargestWord(inputSentence);
-		assertTrue(expectedLargestWords.containsAll(actualLargestWords),
-				"Actual longest words are different then expected longest words");
+	@Test(dataProvider = "inputSentenceAndLongestWords")
+	public void shouldReturnLongestWordInSentence(String inputSentence, List<String> expectedLongestWords) {
+		List<String> actualLongestWords = new LinkedList<>();
+		actualLongestWords = LongestWordInSentence.findLargestWord(inputSentence);
+		assertTrue(expectedLongestWords.containsAll(actualLongestWords),
+				"Actual longest words are different than expected longest words");
 	}
 
-	@DataProvider(name = "inputSentence")
+	@DataProvider(name = "inputSentenceAndLongestWords")
 	public Object[][] createTestData() {
 		return new Object[][] { { "This is great", new LinkedList<String>(Arrays.asList("great")) },
 				{ "", new LinkedList<String>() },
