@@ -16,10 +16,7 @@ public class LongestWordInSentenceTest {
 	@Test(dataProvider = "inputSentence")
 	public void shouldReturnLongestWordInSentence(String inputSentence, List<String> expectedLargestWords) {
 		List<String> actualLargestWords = new LinkedList<>();
-
 		actualLargestWords = LongestWordInSentence.findLargestWord(inputSentence);
-		System.out.println("Expected word" + expectedLargestWords);
-		System.out.println("Actual word" + actualLargestWords);
 		assertTrue(expectedLargestWords.containsAll(actualLargestWords),
 				"Actual longest words are different then expected longest words");
 	}
