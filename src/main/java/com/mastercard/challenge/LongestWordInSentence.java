@@ -15,7 +15,7 @@ public class LongestWordInSentence {
 		List<String> longestStringList = findLargestWord("The cow jumped over the moon.");
 
 		logger.info(
-				"Number of longest words in the input sentence is={} and the word(s) is/are {} and the length of longest word is {}",
+				"Number of longest words in the input sentence is={} and the word(s) is/are: {} and the length of longest word is {}",
 				longestStringList.size(), longestStringList, longestStringList.get(0).length());
 	}
 
@@ -41,20 +41,20 @@ public class LongestWordInSentence {
 				int wordOneLength = wordOne.length();
 				int wordTwoLength = wordTwo.length();
 				if (wordOneLength > wordTwoLength) {
-					return 1;
-				} else if (wordTwoLength > wordOneLength) {
 					return -1;
+				} else if (wordTwoLength > wordOneLength) {
+					return 1;
 				} else
 					return 0;
 			}
 		});
 
-		for (int i = wordsList.size() - 1; i >= 0; i--) {
-			if (wordsList.get(i).length() != wordsList.get(i - 1).length()) {
+		for (int i = 0; i < wordsList.size(); i++) {
+			if (i + 1 >= wordsList.size() || wordsList.get(i).length() == wordsList.get(i + 1).length()) {
+				longestWordsList.add(wordsList.get(i));
+			} else if (wordsList.get(i).length() != wordsList.get(i + 1).length()) {
 				longestWordsList.add(wordsList.get(i));
 				break;
-			} else if (wordsList.get(i).length() == wordsList.get(i - 1).length()) {
-				longestWordsList.add(wordsList.get(i));
 			}
 		}
 

@@ -30,9 +30,12 @@ public class LongestWordInSentenceTest {
 
 	@DataProvider(name = "inputSentenceAndLongestWords")
 	public Object[][] createTestData() {
-		return new Object[][] { { "This is great", new LinkedList<String>(Arrays.asList("great")) },
+		return new Object[][] {
+				{ "The climate in washington is great", new LinkedList<String>(Arrays.asList("washington")) },
 				{ "", new LinkedList<String>() },
 				{ "This is test for list", new LinkedList<String>(Arrays.asList("This", "test", "list")) },
-				{ "Cool", new LinkedList<String>(Arrays.asList("Cool")) } };
+				{ "Cool", new LinkedList<String>(Arrays.asList("Cool")) },
+				{ "Mind long past care goes free fall", new LinkedList<String>(
+						Arrays.asList("Mind", "long", "past", "care", "goes", "free", "fall")) } };
 	}
 }
