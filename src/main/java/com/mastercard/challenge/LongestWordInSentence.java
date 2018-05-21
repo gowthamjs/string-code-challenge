@@ -12,14 +12,14 @@ public class LongestWordInSentence {
 	private static final Logger logger = LogManager.getLogger(LongestWordInSentence.class);
 
 	public static void main(String[] args) {
-		List<String> longestStringList = findLargestWord("The cow jumped over the moon.");
+		List<String> longestStringList = findLargestWords("The cow jumped over the moon.");
 
 		logger.info(
 				"Number of longest words in the input sentence is={} and the word(s) is/are: {} and the length of longest word is {}",
 				longestStringList.size(), longestStringList, longestStringList.get(0).length());
 	}
 
-	public static List<String> findLargestWord(String inputSentence) {
+	public static List<String> findLargestWords(String inputSentence) {
 		List<String> wordsList = new LinkedList<>();
 		List<String> longestWordsList = new LinkedList<>();
 		if (inputSentence.isEmpty()) {
@@ -57,7 +57,7 @@ public class LongestWordInSentence {
 				break;
 			}
 		}
-
+		
 		return longestWordsList;
 	}
 }
