@@ -3,9 +3,11 @@
 This is a simple Java project to find the longest words in a given sentence.
 
 ##Getting Started
+
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 ###Prerequisites
+
 In order to successfully run/debug this project, please install the following.
    - Java 8
    - An open java editor like Eclipse
