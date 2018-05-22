@@ -1,19 +1,19 @@
-#Longest words in a sentence
+# Longest words in a sentence
 
 This is a simple Java project to find the longest words in a given sentence.
 
-##Getting Started
+## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-###Prerequisites
+### Prerequisites
 
 In order to successfully run/debug this project, please install the following.
    - Java 8
    - An open java editor like Eclipse
    - Maven
    
-####Installation 
+#### Installation 
 1. To install Java 8 in your machine, please follow the steps mentioned [here.](https://docs.oracle.com/javase/8/docs/technotes/guides/install/install_overview.html) 
 2. To install Eclipse in your machine, please follow the steps mentioned  [here.](https://wiki.eclipse.org/Eclipse/Installation) 
 3. To install maven in your machine, please follow the steps mentioned [here.](https://www.mkyong.com/maven/how-to-install-maven-in-windows/) 
@@ -21,13 +21,13 @@ In order to successfully run/debug this project, please install the following.
 5. Optional, to install TestNG in Eclipse, please follow the steps mentioned
 [here.](http://www.seleniumeasy.com/testng-tutorials/how-to-install-testng-step-by-step) 
 
-####TestNG
+#### TestNG
 TestNG is used as a test framework for this project because of the following reasons
 - Good support for data providers.
 - Better reporting.
 
 
-####Running the tests
+#### Running the tests
 
 Option# 1: To run the tests from command line, navigate to the root directory of the project and use the below command to run the tests.
 `mvn clean test`
