@@ -34,7 +34,8 @@ public class LongestWordInSentenceTest {
 	 * parameter is the list of expected longest words. Following scenarios are
 	 * covered 1. Words of different length as an input sentence 2. An empty
 	 * input sentence 3. Multiple words with more than one longest words as
-	 * input sentence 4. All the words with same length as input sentence
+	 * input sentence 4. Single word input sentence 5.All the words with same
+	 * length as input sentence
 	 */
 	@DataProvider(name = "inputSentenceAndLongestWords")
 	public Object[][] createTestData() {
