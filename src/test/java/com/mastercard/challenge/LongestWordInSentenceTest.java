@@ -28,6 +28,14 @@ public class LongestWordInSentenceTest {
 		}
 	}
 
+	/*
+	 * This data provider is used to pass different set of test data to the test
+	 * method created above. First parameter is the input sentence and the next
+	 * parameter is the list of expected longest words. Following scenarios are
+	 * covered 1. Words of different length as an input sentence 2. An empty
+	 * input sentence 3. Multiple words with more than one longest words as
+	 * input sentence 4. All the words with same length as input sentence
+	 */
 	@DataProvider(name = "inputSentenceAndLongestWords")
 	public Object[][] createTestData() {
 		return new Object[][] {
